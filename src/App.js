@@ -1,14 +1,24 @@
-import logo from './logo.png';
 import './App.css';
+import Header from './component/Header';
+import Menu from './component/Menu';
+import Body from './component/Body';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        
-        
-      </header>
+      
+      <div className='header'>
+      <Header/>
+      </div>
+      <div className='menu'>
+      <Menu/>
+      </div>
+      <div className='body'>
+      <Body/>
+      </div>
+      
+      
+
     </div>
   );
 }

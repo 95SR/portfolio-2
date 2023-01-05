@@ -1,0 +1,39 @@
+.container.header{
+    
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+
+.logo-container{
+    width: 70%;
+    
+}
+
+.logo{
+    width: 8vmin;
+}
+
+.lng{
+    cursor: pointer;
+}
+.hide{
+    display: none;
+}
+
+.theme{
+    display: flex;
+    align-items: center;
+    
+    gap: 10px;
+}
+
+.theme{
+    color: rgb(173, 173, 173);
+}
+.theme.active{
+    color: black;
+}
+

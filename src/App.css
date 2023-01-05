@@ -3,6 +3,34 @@
   list-style: none;
 }
 
-.App-logo{
-  height: 5vmin;
+.header{
+  grid-area: header;
+  height: 100%;
+  
+}
+
+.menu{
+  grid-area: men;
+  
+  display: flex;
+  width: 100%;
+}
+
+.body{
+  grid-area: body;
+  display: flex;
+  width: 100%;
+}
+.App{
+  display: grid;
+  grid-template-rows: 10vh 90vh;
+  
+  grid-template-areas: 
+  "header header header header header  header header men"
+  "body body body body body body body men"
+  "body body  body body body body body men"
+  "body body  body body body body body men";
+
+  
+  
 }
