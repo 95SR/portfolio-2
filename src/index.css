@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.section{
+  font-weight: 600;
+  font-style: italic;
+  font-size: 64px;
+}
