@@ -21,16 +21,3 @@
   display: flex;
   width: 100%;
 }
-.App{
-  display: grid;
-  grid-template-rows: 10vh 90vh;
-  
-  grid-template-areas: 
-  "header header header header header  header header men"
-  "body body body body body body body men"
-  "body body  body body body body body men"
-  "body body  body body body body body men";
-
-  
-  
-}
