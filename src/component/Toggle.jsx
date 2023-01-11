@@ -1,11 +1,12 @@
 import './Toggle.css'
-import React from 'react'
+import React, {useState} from 'react'
 
-function Toggle() {
+function Toggle({handleTheme}) {
+  
   return (
-    <div>
+    <div >
         <label className='switch'>
-            <input type="checkbox" />
+            <input type="checkbox" onClick={handleTheme}/>
             <span className='slider round'></span>
 
         </label>
