@@ -5,19 +5,42 @@
 
 .header{
   grid-area: header;
-  height: 100%;
+  
   
 }
 
 .menu{
   grid-area: men;
-  
-  display: flex;
-  width: 100%;
+ background-color: red;
+ 
+ 
 }
 
 .body{
   grid-area: body;
-  display: flex;
-  width: 100%;
+ background-color: aliceblue;
+}
+
+.App{
+  display: grid;
+  grid-template-areas: 
+  'header header header'
+  'body body men'
+  'body body men';
+  grid-template-columns: 1fr ;
+  grid-template-rows: min-content auto;
+  height: 100vh;
+  width: 100vw;
+}
+
+@media screen and (max-width:800px) {
+.App{
+  grid-template-areas: 
+  'header header men'
+  'body body men'
+  'body body men';
+  grid-template-rows: min-content 1fr;
+  grid-template-columns: 1fr 1fr;
+}
+  
 }

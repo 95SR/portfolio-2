@@ -6,26 +6,27 @@ import { IconContext } from "react-icons";
 
 import { BsFillSunFill, BsFillMoonFill } from 'react-icons/bs';
 
-function Header() {
+function Header({width}) {
     const [show, setShow] = useState(true)
     const [theme, setTheme] = useState(false)
+    
 
     const handleTheme = () => {
         setTheme(!theme)
         
     }
-
-    
+  
     
     
   return (
-    <div className='container header'>
+    <div className="big-container">
+<div className='container header'>
         <div className="logo-container">
             <img src={logo} className='logo'/>
         </div>
         
 
-        <div className="toggle-btn lng " onClick={() => setShow(!show)}>
+        <div className={width <= 800 ? 'hide' : "toggle-btn lng "} onClick={() => setShow(!show)}>
             {
                 show?
                 <div className="en">EN</div> :
@@ -37,9 +38,9 @@ function Header() {
             
         </div>
 
-        <div className="theme">
+        <div className={width <= 800 ? 'hide' : 'theme'}>
             
-            <IconContext.Provider value={{ size: '20px' }} >
+            <IconContext.Provider value={{ size: '1.5em' }} >
                 <div className={theme ? 'theme' : 'theme active'}>
                     <BsFillSunFill/>
                 </div>
@@ -49,7 +50,7 @@ function Header() {
                 
             
             
-            <IconContext.Provider value={{ size: '20px' }} >
+            <IconContext.Provider value={{ size: '1.5em' }} >
                 <div className={theme ? 'theme active' : 'theme'}>
                     <BsFillMoonFill/>
                 </div>
@@ -60,6 +61,8 @@ function Header() {
 
         
     </div>
+    </div>
+    
   )
 }
 

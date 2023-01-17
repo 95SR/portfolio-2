@@ -1,3 +1,7 @@
-.container.body{
-    background-color:transparent;
+
+.about, 
+.contact,
+.project{
+    height:100%;
+    
 }

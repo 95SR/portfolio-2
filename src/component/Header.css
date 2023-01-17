@@ -1,3 +1,10 @@
+.big-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: solid 1px black;
+}
+
 .container.header{
     
     padding: 1rem ;
@@ -5,22 +12,24 @@
     align-items: center;
     justify-content: space-around;
     
-    z-index: 100;
+    gap: 5px;
+    width: 90%;
+
 }
 
 .logo-container{
-    width: 70%;
+    flex: 1;
     
 }
 
 .logo{
-    width: 8vmin;
+    width: 6vmin;
 }
 
 .lng{
     cursor: pointer;
     
- flex: 1; 
+ 
  text-align: end;
  padding-right: 10px;  
 }
