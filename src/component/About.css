@@ -9,12 +9,30 @@
 
  .title{
     position: absolute;
-    top: 0;
-    left: 10px;
-    font-size: 30px;
-    font-weight: 400;
+    top: 10%;
+    left: 10%;
+    
+    cursor:pointer;
+    height: 50vh;
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
+.number{
+    font-size: 50px;
+    font-weight: 400; 
+}
+
+.number span{
+    color: gray;
+    font-size: 40px;
+}
+
+.subtitles{
+    background-color: tomato;
+}
  .content{
     position: absolute;
     top: 0px;
@@ -31,7 +49,48 @@
     z-index: -1;
     animation: enter 1s ease;
     animation-fill-mode: forwards;
-    
-    
 }
+
+.scroll{
+    position: relative;
+    overflow: hidden;
+    
+    padding-left: 5px;
+}
+
+.scroll span{
+    position: absolute;
+top: -30px;
+left: 0;
+    background-color: white;
+    height: 20px;
+    width: 2px;
+    display: inline-block;
+    
+    animation: moving 2s linear infinite;
+transform: translateY(40px);
+
+}
+
+.scroll p{
+    position: block;
+    left: 0;
+    top: 0;
+}
+
+
+@keyframes moving{
+    0% {
+        transform: translateY(0);
+        
+      }
+      100% {
+        transform: translateY(50px);
+       
+      }
+}
+
+
+
+
 
