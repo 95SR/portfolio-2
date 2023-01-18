@@ -5,6 +5,9 @@ import Menu from './component/Menu';
 import About from './component/About'
 import Project from './component/Project'
 import Contact from './component/Contact'
+import Footer from './component/Footer'
+import Home from './component/Home'
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
@@ -31,30 +34,42 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      <div className='header'>
-      <Header width={width}/>
-      </div>
-      
-      <div className='body'>
-      <Routes>
-        <Route path='/about' element = {
-          <About/>
-        }/>
-
-      <Route path='/project' element = {
-          <Project/>
-      }/>
-
-      <Route path='/hi' element = {
-        <Contact/>
-      }/>
+        <div className='header'>
+        <Header width={width}/>
+        </div>
 
 
-      </Routes>
-      </div>
-      <div className='menu'>
-      <Menu width={width}/>
-      </div>
+        <div className='middle'>
+          <div className='body'>
+            <Routes>
+            <Route exact path='/' element = {
+                    <Home/>
+                  }/>
+                  <Route path='/about' element = {
+                    <About/>
+                  }/>
+
+                <Route path='/project' element = {
+                    <Project/>
+                }/>
+
+                <Route path='/hi' element = {
+                  <Contact/>
+                }/>
+            </Routes>
+            </div>
+
+            <div className='menus'>
+              <Menu width={width}/>
+            </div>
+
+        </div>
+        
+
+        <div className='footer'>
+              <Footer/>
+        </div>
+
       </BrowserRouter>
       
       

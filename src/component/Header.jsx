@@ -3,7 +3,7 @@ import './Header.css'
 import logo from '../logo.png'
 import Toggle from './Toggle';
 import { IconContext } from "react-icons";
-
+import { Link } from 'react-router-dom';
 import { BsFillSunFill, BsFillMoonFill } from 'react-icons/bs';
 
 function Header({width}) {
@@ -20,13 +20,14 @@ function Header({width}) {
     
   return (
     <div className="big-container">
-<div className='container header'>
+    <div className='container-header'>
         <div className="logo-container">
-            <img src={logo} className='logo'/>
+            <Link to='/'><img src={logo} className='logo'/></Link>
+            
         </div>
         
 
-        <div className={width <= 800 ? 'hide' : "toggle-btn lng "} onClick={() => setShow(!show)}>
+        <div className="toggle-btn lng" onClick={() => setShow(!show)}>
             {
                 show?
                 <div className="en">EN</div> :
@@ -38,7 +39,7 @@ function Header({width}) {
             
         </div>
 
-        <div className={width <= 800 ? 'hide' : 'theme'}>
+        <div className='theme'>
             
             <IconContext.Provider value={{ size: '1.5em' }} >
                 <div className={theme ? 'theme' : 'theme active'}>
@@ -58,6 +59,8 @@ function Header({width}) {
             
             
         </div>
+
+        
 
         
     </div>

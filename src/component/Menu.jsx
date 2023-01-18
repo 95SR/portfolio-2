@@ -1,8 +1,8 @@
 import './Menu.css'
 import React, {useState} from 'react'
-import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import { AiOutlineClose, AiOutlineMenu,AiOutlineUser, AiOutlineLaptop } from "react-icons/ai";
 import { IconContext } from "react-icons";
-import { BsFillSunFill, BsFillMoonFill } from 'react-icons/bs';
+import { BsFillSunFill, BsFillMoonFill,BsChatDots } from 'react-icons/bs';
 import { NavLink } from 'react-router-dom';
 
 function Menu({width}) {
@@ -19,30 +19,51 @@ function Menu({width}) {
 
  
   return (
-    <nav className='container menu'>
+    <div className="big-container-menu">
       <div className='burger' onClick={handleClick} >
         <AiOutlineMenu/>
       </div>
+
+      <nav className={show? 'container-menu show' : 'container-menu'}>
+      <div className='close' onClick={handleClick} >
+        <AiOutlineClose/>
+      </div>
+
+      <div className="menu-items">
+
       
-      { width <= 800 ? 
-        <div className={show ? 'menu-show' : 'menu-hide'}>
-          <div className="close" onClick={handleClick}><AiOutlineClose/></div>
-          <NavLink to='/about' activeClassName='active' className='section-title' onClick={handleClick}>ABOUT Me</NavLink>
-          <NavLink to='/project' activeClassName='active' className='section-title' onClick={handleClick}>Project</NavLink>
-          <NavLink to='/hi' activeClassName='active' className='section-title' onClick={handleClick}>Say Hi</NavLink>
+
+        <div className="items">
+          <div className="icon"><AiOutlineUser/></div>
+          <NavLink to='/about' activeClassName='active' className='section-title-small' onClick={handleClick}>ABOUT Me</NavLink>
         </div>
-    :
 
-      <div className='large-screen'>
+        <div className="items">
+          <div className="icon"><AiOutlineLaptop/></div>
+          <NavLink to='/project' activeClassName='active' className='section-title-small' onClick={handleClick}>Project</NavLink>
+        </div>
+
+        <div className="items">
+          <div className="icon"><BsChatDots/></div>
+          <NavLink to='/hi' activeClassName='active' className='section-title-small' onClick={handleClick}>Say hi</NavLink>
+        </div>
+      </div>
+      
+      { width > 800 ? 
+        <div className='large-screen'>
           
-          <NavLink to='/about' activeClassName='active' className='section-title' >ABOUT Me</NavLink>
-          <NavLink to='/project' activeClassName='active' className='section-title'  >Project</NavLink>
-          <NavLink to='/hi' activeClassName='active' className='section-title' >Say Hi</NavLink>
+        <NavLink to='/about' activeClassName='active' className='section-title' >ABOUT Me</NavLink>
+        <NavLink to='/project' activeClassName='active' className='section-title'  >Project</NavLink>
+        <NavLink to='/hi' activeClassName='active' className='section-title' >Say Hi</NavLink>
 
-    </div>
+      </div>
+    :
+    <div></div>
+
+      
     }
 
-<div className="toggle-btn lng " onClick={() => setActive(!active)}>
+        <div className="toggle-btn lng " onClick={() => setActive(!active)}>
             {
                 active?
                 <div className="en">EN</div> :
@@ -91,6 +112,8 @@ function Menu({width}) {
         
         
     </nav>
+    </div>
+    
   )
 }
 

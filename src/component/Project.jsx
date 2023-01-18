@@ -1,9 +1,16 @@
 import React from 'react'
-import './Body.css'
+import './Project.css'
 
 function Project() {
   return (
-    <div className='project'>Project</div>
+    <div className='project'>
+      <div className="title">
+        Project
+      </div>
+      <div className="content">
+        content
+      </div>
+    </div>
   )
 }
 
