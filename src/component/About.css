@@ -22,7 +22,7 @@
 .container{
     
     height: 80vh;
-    width: 90%;
+    width: 100%;
     overflow: scroll;
     position: relative;
     display: flex;
@@ -31,6 +31,11 @@
   animation-delay: 1s;
   opacity: 0;
   animation-fill-mode: forwards;
+  padding-left: 60px;
+}
+
+.container::-webkit-scrollbar{
+    display: none;
 }
 
 @keyframes contentEnter{
@@ -45,9 +50,7 @@
     
 }
 
-.container::-webkit-scrollbar{
-    display: none;
-}
+
 
 .blank{
     background-color: white;
@@ -148,7 +151,7 @@ transform: translateY(40px);
 
 .content{
     background-color: gray;
-    position: fixed;
+    position: absolute;
     top: 10%;
     display: flex;
     flex-direction: column;
