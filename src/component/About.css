@@ -1,60 +1,66 @@
 .about{
-    
     height: 100%;
-    position: relative;
+    
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     color: white;
 }
 
- .title{
-    position: absolute;
-    top: 10%;
-    left: 10%;
+.about{
     
-    cursor:pointer;
-    height: 50vh;
-    width: 30vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-
-.number{
-    font-size: 50px;
-    font-weight: 400; 
-}
-
-.number span{
-    color: gray;
-    font-size: 40px;
-}
-
-.subtitles{
-    background-color: tomato;
-}
- .content{
-    position: absolute;
-    top: 0px;
-    left: 50%;
-}
-
-.about::before{
-    content: "";
-    background-color: rgb(0, 0, 0);
+    background-color: black;
     width: 100%;
     height: 100%;
-    display:block;
+    
     
     z-index: -1;
     animation: enter 1s ease;
     animation-fill-mode: forwards;
 }
 
-.scroll{
-    position: relative;
-    overflow: hidden;
+.container{
     
+    height: 80vh;
+    width: 90%;
+    overflow: scroll;
+    position: relative;
+    display: flex;
+    animation-name: contentEnter;
+  animation-duration: 0.5s;
+  animation-delay: 1s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+@keyframes contentEnter{
+    from {opacity: 0;}
+    to{opacity: 100%;}
+}
+
+.title{
+    
+    width: 40%;
+    position: relative;
+    
+}
+
+.container::-webkit-scrollbar{
+    display: none;
+}
+
+.blank{
+    background-color: white;
+    height: 160vh;
+    width: 1px;
+    position: absolute;
+    
+}
+
+.scroll{
+    position: fixed;
+    overflow: hidden;
+    top: 70%;
     padding-left: 5px;
 }
 
@@ -72,12 +78,25 @@ transform: translateY(40px);
 
 }
 
+.up span{
+    position: absolute;
+bottom: -30px;
+left: 0;
+    background-color: white;
+    height: 20px;
+    width: 2px;
+    display: inline-block;
+    
+    animation: movingUp 2s linear infinite;
+transform: translateY(40px);
+
+}
+
 .scroll p{
     position: block;
     left: 0;
     top: 0;
 }
-
 
 @keyframes moving{
     0% {
@@ -90,7 +109,64 @@ transform: translateY(40px);
       }
 }
 
+@keyframes movingUp{
+    0% {
+        transform: translateY(50px);
+        
+      }
+      100% {
+        transform: translateY(0);
+       
+      }
+}
+
+
+.number{
+    font-size: 60px;
+    font-weight: 400; 
+    position: fixed;
+    top: 10%;
+}
+
+.number span{
+    color: gray;
+    font-size: 40px;
+}
+
+.subtitles{
+    background-color: black;
+    position: fixed;
+    top : 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    height: 110px;
+    overflow: hidden;
+    font-size: 40px;
+    
+}
+
+.content{
+    background-color: gray;
+    position: fixed;
+    top: 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    height: 70%;
+    overflow: hidden;
+    font-size: 30px;
+    left: 30%;
+    margin-right: 20px;
+}
+
+.skill{
+    transform: translateY(-30px);
+}
 
 
 
+.cursor-custom{
+    position: fixed;
+}
 
