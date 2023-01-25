@@ -77,6 +77,8 @@ const handleScroll = e => {
           /<span>03</span> 
           </div>
 
+          
+
           <div className="subtitles" >
             <div className="sub intro" style={{transform: `translateY(${-scrollY/2}px)`}}>
               Intro
@@ -93,9 +95,9 @@ const handleScroll = e => {
        ?
         <div className="scroll up">
               <span>  </span> scroll up
-          </div>
+        </div>
           :
-        <div className="scroll up"></div>}
+        <div className="scroll down"><span>  </span> scroll </div>}
 
           
           
@@ -103,8 +105,25 @@ const handleScroll = e => {
       </div>
 
         <div className="content">
-         content
-        
+         
+         {
+            (scrollY < 290) 
+            ?
+            <div className="content-item">
+          intro
+         </div>
+            :
+            (scrollY >= 290 && scrollY < 700)
+            ?
+            <div className="content-item">
+          bg
+         </div>
+            :
+            <div className="content-item">
+          skill
+         </div>
+
+          }
             
         </div>
 

@@ -19,6 +19,7 @@
   height: max-content;
   padding-top: 9vh;
   z-index: -100;
+  
 }
 
 .blank{
@@ -26,7 +27,7 @@
   height: 200vh;
   width: 1px;
   position:relative;
-  left: 40px;
+  left: 30px;
   
 }
 
@@ -50,4 +51,9 @@
       transform: translateY(0);
      
     }
+}
+
+@keyframes contentEnter{
+  from {opacity: 0;}
+  to{opacity: 100%;}
 }

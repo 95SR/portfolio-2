@@ -7,17 +7,26 @@
 .title, .content{
     
     
-    width: 45%;
+    
     height: 100%;
     padding: 2em;
 }
 
 .title{
     display: flex;
+    width: 30%;
+    
 }
 
 .content{
-    left: 50vh;
+    width: 70%;
+    background-color: white;
+    color: black;
+    position: fixed;
+    right: 0;
+    animation: enter 1s ease;
+    animation-fill-mode: forwards;
+    
 }
 
 .number{
@@ -35,22 +44,26 @@
 .subtitles{
     background-color: black;
     position: fixed;
-    top : 40%;
+    top : 80%;
     display: flex;
     flex-direction: column;
     gap: 200px;
     height: 100px;
     overflow: hidden;
-    font-size: 40px;
+    font-size: 50px;
     
 }
 
+.sub{
+    border-bottom: solid 1px white;
+}
 
 .scroll{
     position: fixed;
     overflow: hidden;
-    top: 70%;
+    top: 93%;
     padding-left: 5px;
+    font-size: 30px;
 }
 
 .scroll span{
@@ -75,7 +88,6 @@ left: 0;
     height: 20px;
     width: 2px;
     display: inline-block;
-    
     animation: movingUp 2s linear infinite;
 transform: translateY(40px);
 
@@ -87,6 +99,14 @@ transform: translateY(40px);
     top: 0;
 }
 
+.content-item{
+    opacity: 0;
+    animation-name: contentEnter;
+  animation-duration: 1s;
+  animation-delay: 1s;
+ 
+  animation-fill-mode: forwards;
+}
 @media screen and (max-width:800px) {
 
 }
