@@ -7,44 +7,47 @@
 
 }
 
-.header{
-  
-  height: 10vh;
-}
-
-.middle{
-  
-  flex: 1;
-  display: flex;
-  
-}
-
-.body{
-  
-  
-  flex: 1;
-  
-  
-  
-}
-
-
-.menus{
-  
-  height: 100%;
-  
-}
-
-
-
-.footer{
-  background-color: bisque;
-  height: 10vh;
-}
-
 @keyframes enter{
   0% {transform: translateY(100%);width: 10px;}
   50% {transform: translateY(0);width: 10px;}
   100% {transform: translateY(0);}
   
+}
+
+.body{
+  background-color: black;
+  height: max-content;
+  padding-top: 9vh;
+  z-index: -100;
+}
+
+.blank{
+  background-color: white;
+  height: 200vh;
+  width: 1px;
+  position:relative;
+  left: 40px;
+  
+}
+
+@keyframes moving{
+  0% {
+      transform: translateY(0);
+      
+    }
+    100% {
+      transform: translateY(50px);
+     
+    }
+}
+
+@keyframes movingUp{
+  0% {
+      transform: translateY(50px);
+      
+    }
+    100% {
+      transform: translateY(0);
+     
+    }
 }

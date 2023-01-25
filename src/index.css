@@ -9,9 +9,13 @@ body {
   font-size: 1em;
   box-sizing: border-box;
   padding: 0;
-  overflow: hidden;
+  overflow-x: hidden;
   
   
+}
+
+body::-webkit-scrollbar{
+  display: none;
 }
 
 .section-title{
