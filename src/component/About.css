@@ -19,13 +19,11 @@
 }
 
 .content{
-    width: 70%;
+    width: 68vw;
     background-color: white;
     color: black;
-    position: fixed;
-    right: 0;
+    position: relative;
     animation: enter 1s ease;
-    animation-fill-mode: forwards;
     
 }
 
@@ -99,14 +97,38 @@ transform: translateY(40px);
     top: 0;
 }
 
-.content-item{
-    opacity: 0;
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .enter {
     animation-name: contentEnter;
   animation-duration: 1s;
   animation-delay: 1s;
  
-  animation-fill-mode: forwards;
 }
-@media screen and (max-width:800px) {
+}
 
+@keyframes wipe-enter {
+	0% {
+		transform: scale(0, .025);
+	}
+	50% {
+		transform: scale(1, .025);
+	}
+}
+
+.content-container{
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    gap: 1000px;
+    transform: translateX(700px);
+    
+}
+
+.intros{
+    position: fixed;
+    background-color: tomato;
+    top: 20%;
+    left: 500px;
 }
