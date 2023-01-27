@@ -143,11 +143,11 @@ console.log(x)
       </div>
 
         <div className="content">
-          
-            <div className="content-item intros" ref={content} style={{transform: `translateX(${-scrollY/2}px)`}}>
-          intro
-         </div>
-         <div className={isInViewport2 ? "content-item enter" : "content-item"} ref={content2} >
+          <h3 className='scroll-title'>Scroll Down</h3>
+            <div className="intro-content" ref={content} >
+              <div className="intros" style={{transform: `translateX(${-scrollY/2}px)`}}>#explorer #adventurer</div>
+            </div>
+         <div className={isInViewport2 ? "content-item " : "content-item"} ref={content2} >
           bg
          </div>
          <div className="content-item" ref={content3} >
