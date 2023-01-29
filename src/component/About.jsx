@@ -1,6 +1,8 @@
 import React, {useState, useEffect,useMemo} from 'react'
 import { useRef } from 'react';
 import './About.css'
+import { IoMdSchool } from "react-icons/io";
+import { MdWork } from "react-icons/md";
 
 function About() {
   const [scrollY, setScrollY] = useState(0);
@@ -20,7 +22,7 @@ const handleScroll = e => {
 }
    
   const isInViewport2 = useIsInViewport(content2);
-  //console.log('isInViewport2: ', isInViewport2);
+  console.log(isInViewport2==true);
   
 const [x, setX] = useState();
 
@@ -115,19 +117,24 @@ console.log(x)
           /<span>03</span> 
           </div>
 
-          
-
           <div className="subtitles" >
-            <div className="sub intro" style={{transform: `translateY(${-scrollY/2}px)`}}>
-              Intro
-            </div>
-            <div className="sub bg" style={{transform: `translateY(${-scrollY/2}px)`}}>
+          {
+            isInViewport2
+            ?
+            <div className="sub bg" >
               Background
             </div>
-            <div className="sub skill" style={{transform: `translateY(${-scrollY/2}px)`}}>
-              Skill
+
+            :
+            <div className="sub intro" >
+              Intro
             </div>
+          }
+
           </div>
+
+          
+          
 
        {scrollY > 1000 
        ?
@@ -142,14 +149,39 @@ console.log(x)
         
       </div>
 
-        <div className="content">
+        <div className={!isInViewport2 ? "content" : "content no-border"}>
           <h3 className='scroll-title'>Scroll Down</h3>
-            <div className="intro-content" ref={content} >
-              <div className="intros" style={{transform: `translateX(${-scrollY/2}px)`}}>#explorer #adventurer</div>
-            </div>
-         <div className={isInViewport2 ? "content-item " : "content-item"} ref={content2} >
-          bg
+          
+          <div className="intro-content" ref={content} style={{clipPath:`circle(${scrollY}px)`}} >
+          <div className="intros2" style={{transform: `translateX(${scrollY-200}px)`}}>#newExperience #Passionate  #newExperience #Passionate #newExperience #Passionate #Curious</div>
+            <div className="intros" style={{transform: `translateX(${-scrollY+50}px)`}} >#explorer #adventurer  #explorer #adventurer </div>
+           
+            <div className="intros2" style={{transform: `translateX(${scrollY-200}px)`}}> #Passionate #Curiousity  #Passionate #Curious #Passionate #Curious</div>
+            
+          </div>
+         
+         
+         <div className= "bg-content "  ref={content2} >
+         <div className="sub-title">Background</div>
+         <div className="icon">
+          <div className="left">
+          <IoMdSchool/>
+          <ul>
+            <li><span className='year'> 2019 ~ 2021 </span> Kyunghee University</li>
+          </ul>
+
+          </div>
+          <div className="right">
+          <MdWork/>
+          <ul>
+            <li><span className='year'> 2022 ~ 2023 </span> ASEAN-Korea Centre</li>
+          </ul>
+
+          </div>
+          
          </div>
+         </div>
+
          <div className="content-item" ref={content3} >
           skill
          </div>

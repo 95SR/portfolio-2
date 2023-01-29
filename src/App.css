@@ -28,6 +28,7 @@
   width: 1px;
   position:relative;
   left: 30px;
+  z-index: 3;
   
 }
 
