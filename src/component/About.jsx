@@ -152,7 +152,7 @@ console.log(x)
         <div className={!isInViewport2 ? "content" : "content no-border"}>
           <h3 className='scroll-title'>Scroll Down</h3>
           
-          <div className="intro-content" ref={content} style={{clipPath:`circle(${scrollY}px)`}} >
+          <div className={"intro-content"} ref={content} style={{clipPath:`circle(${scrollY}px)`}} >
           <div className="intros2" style={{transform: `translateX(${scrollY-200}px)`}}>#newExperience #Passionate  #newExperience #Passionate #newExperience #Passionate #Curious</div>
             <div className="intros" style={{transform: `translateX(${-scrollY+50}px)`}} >#explorer #adventurer  #explorer #adventurer </div>
            
@@ -162,25 +162,29 @@ console.log(x)
          
          
          <div className= "bg-content "  ref={content2} >
-         <div className="sub-title">Background</div>
-         <div className="icon">
-          <div className="left">
-          <IoMdSchool/>
-          <ul>
-            <li><span className='year'> 2019 ~ 2021 </span> Kyunghee University</li>
-          </ul>
+            <div className="sub-title">Background</div>
+            <div className="icon">
+                <div className="left">
+                  <IoMdSchool />
+                  <ul>
+                    <li><span className='year'> 2019 ~ 2021 </span> Kyunghee University, Master Degree in Electronic Engineering</li>
+                    <li><span className='year'> 2012 ~ 2016 </span> Bandung Institute of Technology, Bachelor Degree in Mathematics</li>
+                    <li><span className='year'> 2015 </span> Kumoh National Institute of Technology, Exchange Program in Applied Mathematics</li>
+                  </ul>
 
-          </div>
-          <div className="right">
-          <MdWork/>
-          <ul>
-            <li><span className='year'> 2022 ~ 2023 </span> ASEAN-Korea Centre</li>
-          </ul>
+                </div>
+                
+                <div className="right">
+                  <MdWork/>
+                  <ul>
+                    <li><span className='year'> 2022 ~ 2023 </span> ASEAN-Korea Centre, Project Assistant</li>
+                    <li><span className='year'> 2018 ~ 2019 </span> PriceWaterHouseCoopers, Data Analyst</li>
+                  </ul>
 
+                </div>
+                
+              </div>
           </div>
-          
-         </div>
-         </div>
 
          <div className="content-item" ref={content3} >
           skill
