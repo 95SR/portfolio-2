@@ -1,6 +1,5 @@
 .App{
   height: 100vh;
-  
   display: flex;
   flex-direction: column;
   
@@ -14,17 +13,10 @@
   
 }
 
-.body{
-  background-color: black;
-  height: max-content;
-  padding-top: 9vh;
-  z-index: -100;
-  
-}
 
 .blank{
   background-color: white;
-  height: 300vh;
+  height: 100%;
   width: 1px;
   position:relative;
   left: 30px;
@@ -58,3 +50,4 @@
   from {opacity: 0;}
   to{opacity: 100%;}
 }
+

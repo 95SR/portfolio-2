@@ -6,33 +6,39 @@ import { MdWork } from "react-icons/md";
 
 function About() {
   const [scrollY, setScrollY] = useState(0);
-  const content = useRef(null);
-  const content2 = useRef(null);
-  const content3 = useRef(null);
+  const content = useRef();
+  const content2 = useRef();
+  const content3 = useRef();
+  const [x, setX] = useState();
 
-  
-  
-  
-const handleScroll = e => {
+const handleScroll = () => {
   
   setScrollY(window.scrollY)
-  const x = content.current.offsetLeft;
-    setX(x);
+  
   
 }
-   
-  const isInViewport2 = useIsInViewport(content2);
-  console.log(isInViewport2==true);
-  
-const [x, setX] = useState();
 
 const getPosition = () => {
-    const x = content.current.offsetLeft;
-    setX(x);
-  };
+  
+  setX(content2.current.offsetTop);
+}
+  
+  const isInViewport2 = useIsInViewport(content2);
+  //console.log(isInViewport2==true);
 
-console.log(scrollY)
+  const isInViewport3 = useIsInViewport(content3);
+ // console.log(isInViewport3==true);
+
+ useEffect(() => {
+  getPosition();
+}, [x]);
+
+useEffect(() => {
+  window.addEventListener("scroll", getPosition);
+}, []);
+
 console.log(x)
+
 
  
 
@@ -100,18 +106,20 @@ console.log(x)
   return (
     <div className='about body' >
      
-        <div className="blank"></div>
+        
         <div className="title" >
           <div className="number">
           {
-            (scrollY < 290) 
-            ?
-            '01'
-            :
-            (scrollY >= 290 && scrollY < 700)
+            (isInViewport2 && scrollY<=2000)
             ?
             '02'
-            :'03'
+            :
+            (isInViewport2 && isInViewport3)
+            ?
+            '03'
+            :
+            '01'
+
 
           }
           /<span>03</span> 
@@ -119,35 +127,36 @@ console.log(x)
 
           <div className="subtitles" >
           {
-            isInViewport2
+           (isInViewport2 && scrollY<=2000) 
             ?
             <div className="sub bg" >
               Background
             </div>
 
             :
+
+            (isInViewport3 && isInViewport2)
+            ?
+            <div className="sub intro" >
+              Skill
+            </div>
+            :
             <div className="sub intro" >
               Intro
             </div>
+            
           }
 
           </div>
 
-          
-          
-
-       {scrollY > 1000 
-       ?
-        <div className="scroll up">
-              <span>  </span> scroll up
+          {scrollY > 1000 
+          ?
+            <div className="scroll up">
+                  <span>  </span> scroll up
+            </div>
+              :
+            <div className="scroll down"><span>  </span> scroll </div>}
         </div>
-          :
-        <div className="scroll down"><span>  </span> scroll </div>}
-
-          
-          
-        
-      </div>
 
         <div className={!isInViewport2 ? "content" : "content no-border"}>
           <h3 className='scroll-title'>Scroll Down</h3>
@@ -179,6 +188,7 @@ console.log(x)
                   <ul>
                     <li><span className='year'> 2022 ~ 2023 </span> ASEAN-Korea Centre, Project Assistant</li>
                     <li><span className='year'> 2018 ~ 2019 </span> PriceWaterHouseCoopers, Data Analyst</li>
+                    <li><span className='year'> 2015 </span> Total E&P Indonesie, Well Performance, Internship</li>
                   </ul>
 
                 </div>
@@ -186,7 +196,7 @@ console.log(x)
               </div>
           </div>
 
-         <div className="content-item" ref={content3} >
+         <div className="skill-content" ref={content3} >
           skill
          </div>
           

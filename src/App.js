@@ -52,9 +52,6 @@ function App() {
                   <Contact/>
                 }/>
             </Routes>
-            
-
-            
               <Menu width={width}/>
             
 
