@@ -35,7 +35,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         
-        <Header width={width}/>
+        {/*<Header width={width}/>*/}
             <Routes>
             <Route exact path='/' element = {
                     <Home/>

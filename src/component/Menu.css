@@ -3,10 +3,16 @@
     background-color: white;
     position: fixed;
     right: 0;
-    
+    opacity: 0;
+    animation: menu-appear 1s ease-in 1.5s;
+animation-fill-mode: both;
 
 }
 
+@keyframes menu-appear{
+    from {opacity: 0;}
+    to {opacity: 100%;}
+}
 .container-menu{
     
     height: 100%;
@@ -141,6 +147,7 @@
     right: 3%;
     cursor: pointer;
     display: block;
+    color: white;
 }
 
 .close{
@@ -167,4 +174,5 @@
     from {width: 0%;}
     to {width: 100%;}
 }
+
 
