@@ -1,6 +1,6 @@
 .about{
     background-color: black;
-    height: 100vh;
+    height: max-content;
     width: 100vw;
     animation: bg-slide 1s ease-in-out;
     position: relative;
@@ -9,10 +9,68 @@
 
 .logo-container{
     position: relative;
-    top: 3%;
+    top: 1%;
     left: 3%;
-    height: 200px;
+    
+    
 }
 .logo{
     width: 10vw;
+position: fixed;
+}
+
+.background{
+    background-color: aquamarine;
+    margin-top: 120vh;
+}
+
+.scroll{
+    
+    color: white;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    font-weight: 600;
+    z-index: -100;
+    
+
+}
+
+.mouse{
+    color: white;
+    position: absolute;
+    bottom: 0;
+    font-size: 40px;
+}
+
+.intro{
+    font-size: 3rem;
+    position: fixed;
+    background-color: white;
+    height: 100%;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    clip-path: circle(0%); 
+}
+
+.intro > * {
+    width: max-content;
+    font-size: 5rem;
+    position: relative;
+}
+
+.intro div:first-child{
+    
+    left: 30px;
+}
+
+.intro div:nth-child(3){
+    right: 50vw;
 }
