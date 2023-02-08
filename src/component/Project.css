@@ -1,34 +1,82 @@
+.project{
+  background-color: black;
+  color: white;
+  animation: bg-slide 1s ease-in-out;
+  
+  min-height: 100vh;
+}
 
-  .containers{
-    height: 1000px;
-    overflow: auto;
-  }
-  .page {
-    height: 1100px;
-    font-family: Georgia;
-    color: #222;
-    background:blue;
+
+
+.project .logo-container{
+  top: 3%;
+  position: fixed;
+}
+
+.project-content{
+  
+  min-height: 100vh;
+  padding-top: 150px ;
+  padding-left: 50px;
+  padding-right: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.project .subtitle{
+  font-size: 4rem;
+  text-align: left;
+  text-decoration: none;
+  margin-bottom: 0;
+background-color: black;  
+}
+
+@media screen and (max-width: 1000px) {
+  .project .subtitle{
+    text-align: center;
+    font-size: 3rem;
     
   }
-     p {
-       font-size: 1.2em;
-       background: #f44336;
-       color: #FFF;
-       padding: 1.2em;
+}
+
+@media screen and (max-width: 800px){
+  .project .subtitle{
+    text-align: center;
+    font-size: 30px;
+    
   }
-       span {
-         font-weight: bold;
-       }
-     
-    
-      .optimized {
-        background:#43A047;
-      }
-    
-    .fixed {
-      position: fixed;
-      top: 10%;
-    }
+
+  .project-content{
+    padding-top: 60px;
+  }
+} 
+
+.project .subtitle span{
+  display: block;
+}
+
+.works-element-container{
+  
+  flex: 1 ;
+  display: flex;
+  
+}
+
+.page-number{
+
+  margin-bottom: 20px;
+  font-size: 30px;
+ text-align: center;
+}
+
+.arrow:hover{
+cursor: pointer;
+}
+
+.project .contents{
+  height: auto;
   
   
-  
+}
+
