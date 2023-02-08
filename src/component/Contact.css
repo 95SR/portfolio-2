@@ -63,7 +63,7 @@ textarea::placeholder{
 button{
     font-size: 20px;
 cursor: pointer;
-width: 25%;
+width: 200px;
 padding: 10px;
 border-radius: 10pt;
 transition: all 0.3s ease-in-out;
@@ -81,6 +81,36 @@ button:hover{
     justify-content: space-between;
     gap: 50px;
     width: 100%;
+}
+
+
+@media screen and (max-width:800px) {
+    .info{
+        flex-direction: column;
+    }
+
+    input{
+        width: 100%;
+    }
+
+    form{
+        
+        width: 80%;
+    }
+
+   button{
+    font-size: 15px;
+    width: 150px;
+   }
+    
+}
+
+
+@media screen and (max-width:1000px) {
+    form{
+        
+        width: 70%;
+    }
 }
 
 
