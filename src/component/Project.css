@@ -57,7 +57,7 @@ background-color: black;
 }
 
 .works-element-container{
-  
+  position: relative;
   flex: 1 ;
   display: flex;
   
@@ -80,3 +80,163 @@ cursor: pointer;
   
 }
 
+.edit{
+  font-size: 25px;
+  position:absolute;
+  right: 50px;
+  top: -50px;
+  color: gray;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.edit:hover{
+  color: aliceblue;
+}
+
+.work-edit-popup{
+  height: auto;
+  width: 60%;
+  background-color: rgb(228, 225, 225);
+  position: fixed;
+border-radius: 10pt;
+  z-index: 100;
+  transform: translateX(25%);
+  color: black;
+  opacity: 100%;
+  transition: all 0.3s ease;
+}
+
+.popup{
+  position: relative;
+  display: flex;
+  height: 100%;
+  padding: 30px 20px;
+  width: 100%;
+  flex-direction: column;
+  
+}
+
+.header{
+  font-weight: 600;
+  height: fit-content;
+ background-color: white;
+  font-size: 2rem;
+  text-align: center;
+  padding: 5px;
+}
+.open{
+position: absolute;
+top: 5px;
+right: 5px;
+font-size: 20px;
+cursor: pointer;
+transition: all 0.3s ease;
+}
+
+.open:hover{
+  color: rgb(240, 75, 75);
+}
+
+.form{
+  display: flex;
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.project form{
+ 
+ width: 100%;
+ 
+}
+.form-item{
+ 
+  width: 100%;
+  display: flex;
+}
+
+
+
+label{
+  
+  width: 200px;
+}
+
+input{
+  padding: 0px 5px;
+  border-radius: 2pt;
+  font-size: 15px;
+}
+
+.popup .button{
+  font-size: 20px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.popup .button:hover{
+  border: solid 1px black;
+}
+
+.hide{
+  position: fixed;
+  opacity: 0;
+  left: 100%;
+  transition: all 0.3s ease;
+}
+
+.add{
+  margin-left: 20px;
+  background-color: white;
+  padding: 5px 20px;
+  border-radius: 2pt;
+  border: solid 1px black;
+  cursor: pointer;
+
+}
+
+.form-tools{
+  position: relative;
+}
+
+.toolList-container{
+  
+  
+  display: flex;
+ 
+  flex-direction: row;
+  width: 100%;
+}
+
+.toolList{
+  background-color: rgb(230, 230, 230);
+  margin-right: 10px;
+  border-radius: 2pt;
+  padding: 5px;
+position: relative;
+}
+
+.toolList .closet{
+  background-color: rgb(247, 247, 247);
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.toolList .closet:hover{
+  background-color: rgb(186, 187, 187);
+}
