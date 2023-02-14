@@ -25,7 +25,7 @@ function Project() {
   const [input, setInput] =useState({})
   const [trigger,setTrigger] = useState(false)
   const select = useRef()
-  const [projectList, setProjectList] = useState([])
+  const [slide, setSlide] =useState(0)
 
   
 
@@ -95,8 +95,32 @@ function Project() {
     const newTools = toolList.filter(item => item.id != index)
     setToolList(newTools)
   }
-   
+
  
+
+
+   
+ const backHandler = () => {
+  let slideClass = Array.from(
+    document.getElementsByClassName('slides')
+  );
+  {slide===0 ?
+    setSlide(slideClass.length-1) :
+    setSlide(slide => slide-1)}
+  
+  console.log(slide)
+ }
+  
+ const forwardHandler = () => {
+  let slideClass = Array.from(
+    document.getElementsByClassName('slides')
+  );
+  {slide === slideClass.length-1 ?
+  setSlide(0) :
+  setSlide(slide => slide+1)}
+  
+  
+ }
   
 
   return (
@@ -123,6 +147,9 @@ function Project() {
         <div className="project-content">
           <div className="subtitle">
             SOME Project <span>I've been working on</span>
+            <div className="edit" onClick={editHandler}>
+              <AiOutlineEdit/>
+            </div>
           </div>
 
           <div className={popup ? "work-edit-popup" : "hide"}>
@@ -207,16 +234,25 @@ function Project() {
           </div>
 
           <div className="works-element-container">
-            <div className="edit" onClick={editHandler}>
-              <AiOutlineEdit/>
+            
+            <div className="slides one" style={{transform:`translateX(${-(slide)*100}%)`}}>
+            <Works  details={'test detail'} live={'https://tteoky.onrender.com/'} github={'https://github.com/95SR/portfolio-2'} tools={'react'}/>
+
             </div>
-          <Works/>
+            <div className="slides two" style={{transform:`translateX(${-(slide)*100}%)`}}>
+            <Works details={'test detail 2'} live={'https://tteoky.onrender.com/'} github={'https://github.com/95SR/portfolio-2'} tools={'js'}/>
+            </div>
+
+            <div className="slides three" style={{transform:`translateX(${-(slide)*100}%)`}}>
+            <Works details={'test detail 3'} live={'https://tteoky.onrender.com/'} github={'https://github.com/95SR/portfolio-2'} tools={'js'}/>
+            </div>
+                        
           </div>
 
           <div className="page-number">
             <div className="arrow">
-              <IoIosArrowBack/>
-              <IoIosArrowForward/>
+              <IoIosArrowBack onClick={backHandler}/>
+              <IoIosArrowForward onClick={forwardHandler}/>
             </div>
           </div>
 

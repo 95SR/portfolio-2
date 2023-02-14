@@ -3,7 +3,7 @@ import './Works.css'
 
 import p1 from '../project1.png'
 import { FaReact } from "react-icons/fa";
-function Works() {
+function Works({details, live, github, tools}) {
   return (
     <div className='works-container'>
         <div className="left">
@@ -17,16 +17,16 @@ function Works() {
 
         <div className="right">
             <div className="details">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure quod quam eius asperiores rerum provident. A, qui explicabo. Eius temporibus ducimus explicabo saepe rerum vel sed ipsa placeat aliquid iusto.
+                {details}
             </div>
 
             <div className="tools">
-              <FaReact/>
+              {tools ==='react' ? <FaReact/> : "" }
             </div>
 
             <div className="action">
-            <div className="live button" onClick={(e) => window.open('https://tteoky.onrender.com/', '_blank')}>View Live</div>
-            <div className="live button" onClick={(e) => window.open('https://github.com/95SR/portfolio-2' , '_blank')}>github</div>
+            <div className="live button" onClick={(e) => window.open(`${live}`, '_blank')}>View Live</div>
+            <div className="live button" onClick={(e) => window.open(`${github}` , '_blank')}>github</div>
 
             </div>
 
