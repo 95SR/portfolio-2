@@ -5,17 +5,15 @@ import Menu from './component/Menu';
 import About from './component/About'
 import Project from './component/Project'
 import Contact from './component/Contact'
-
 import Home from './component/Home'
-import logo from './logo.png'
-import { Link } from 'react-router-dom';
-import { SiGmail } from "react-icons/si";
-import { AiFillGithub } from "react-icons/ai";
-import { BsLinkedin, BsMouse } from "react-icons/bs";
-import { FaReact } from "react-icons/fa";
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Amplify } from 'aws-amplify';
+import config from './aws-exports';
+import { withAuthenticator} from '@aws-amplify/ui-react'
 
-function App() {
+Amplify.configure(config);
+
+function App({ signOut }) {
 
   const [width, setWidth] = useState(window.innerWidth)
 
@@ -39,6 +37,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+      <button onClick={signOut}>Sign out</button>
         
         {/*<Header width={width}/>*/}
        
@@ -77,4 +76,4 @@ function App() {
   );
 }
 
-export default App;
+export default withAuthenticator(App) ;
