@@ -7,13 +7,21 @@ import Project from './component/Project'
 import Contact from './component/Contact'
 
 import Home from './component/Home'
-import logo from './logo.png'
-import { Link } from 'react-router-dom';
-import { SiGmail } from "react-icons/si";
-import { AiFillGithub } from "react-icons/ai";
-import { BsLinkedin, BsMouse } from "react-icons/bs";
-import { FaReact } from "react-icons/fa";
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Amplify } from 'aws-amplify';
+import config from './aws-exports';
+
+import "@aws-amplify/ui-react/styles.css";
+import {
+  withAuthenticator,
+  Button,
+  Heading,
+  Image,
+  View,
+  Card,
+} from "@aws-amplify/ui-react";
+Amplify.configure(config);
+
 
 function App() {
 
@@ -41,7 +49,10 @@ function App() {
       <BrowserRouter>
         
         {/*<Header width={width}/>*/}
-       
+        <View className="App">
+      
+      
+    </View>
 
         
             <Routes>

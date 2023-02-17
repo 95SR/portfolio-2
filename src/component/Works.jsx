@@ -2,7 +2,9 @@ import React from 'react'
 import './Works.css'
 
 import p1 from '../project1.png'
-import { FaReact } from "react-icons/fa";
+import { FaReact, FaHtml5, FaCss3Alt } from "react-icons/fa";
+import { SiJavascript, SiAwsamplify } from "react-icons/si";
+
 function Works({details, live, github, tools}) {
   return (
     <div className='works-container'>
@@ -21,8 +23,22 @@ function Works({details, live, github, tools}) {
             </div>
 
             <div className="tools">
-              {tools ==='react' ? <FaReact/> : "" }
+            {tools.map((item) => {
+              return(
+                  <div >
+                    {item ==='react' ? <FaReact/> : 
+                    item ==='html' ? <FaHtml5/> :
+                    item ==='css' ? <FaCss3Alt/> :
+                    item ==='js' ? <SiJavascript/> :
+                    item ==='amplify' ? <SiAwsamplify/> : ""}
+                  </div>
+              )
+            })}
             </div>
+
+           
+
+            
 
             <div className="action">
             <div className="live button" onClick={(e) => window.open(`${live}`, '_blank')}>View Live</div>
